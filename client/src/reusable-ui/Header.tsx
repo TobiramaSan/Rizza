@@ -4,6 +4,7 @@ import { IoClose, IoSearchOutline } from "react-icons/io5";
 import { FiShoppingBag, FiStar, FiUser } from "react-icons/fi";
 import Container from "./Container";
 import { CgChevronDown } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchText, setSearchText] = useState("");
@@ -20,10 +21,10 @@ const Header = () => {
   return (
     <div className="w-full bg-whiteText">
       <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between px-4 lg:px-0">
-        <div className="">
-          {/*Logo*/}
+        {/*Logo*/}
+        <Link to="/">
           <img src={logo} alt="" className="w-44" />
-        </div>
+        </Link>
         {/*Searchbar*/}
         <div className="hidden md:inline-flex flex-row max-w-3xl w-full relative ">
           <input

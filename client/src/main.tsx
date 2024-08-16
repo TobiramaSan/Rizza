@@ -11,6 +11,8 @@ import Favourite from "./pages/Favourite.tsx";
 import Success from "./pages/Success.tsx";
 import Cancel from "./pages/Cancel.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Category from "./pages/Category.tsx";
+import Orders from "./pages/Orders.tsx";
 
 //creating nested routes
 
@@ -26,6 +28,18 @@ const router = createBrowserRouter([
       {
         path: "/product",
         element: <Product />,
+      },
+      {
+        path: "/product/:id",
+        element: <Product />,
+      },
+      {
+        path: "/category",
+        element: <Category />,
+      },
+      {
+        path: "/category/:id",
+        element: <Category />,
       },
       {
         path: "/profile",
@@ -46,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/cancel",
         element: <Cancel />,
+      },
+      {
+        path: "/orders",
+        element: <Orders />,
       },
       {
         path: "*",
