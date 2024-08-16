@@ -1,17 +1,15 @@
-import React, { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-interface Props {
-  children: ReactNode;
-  className?: string;
-}
-
-const Layout = ({ children, className }: Props) => {
-  const newClassName = twMerge(
-    "max-w-screen-xl mx-auto py-10 px-4 lg:px-0 ",
-    className
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
   );
-  return <div className={newClassName}>{children}</div>;
 };
 
 export default Layout;

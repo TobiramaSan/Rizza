@@ -1,16 +1,11 @@
-import Footer from "./reusable-ui/Footer";
-import Header from "./reusable-ui/Header";
-import Layout from "./reusable-ui/Layout";
+import Container from "./reusable-ui/Container";
 
 function App() {
   return (
     <main className="">
-      <Header />
-      <Layout>
-        {" "}
+      <Container>
         <div className="">Shop Rizza Today!</div>
-      </Layout>
-      <Footer />
+      </Container>
     </main>
   );
 }
