@@ -47,19 +47,22 @@ const Header = () => {
         </div>
         {/*Menubar */}
         <div className="flex items-center gap-x-6 text-2xl ">
-          <FiUser className="hover:text-sky-200 duration-200 cursor-pointer" />
-          <div className="relative block">
+          <Link to="/profile">
+            <FiUser className="hover:text-sky-200 duration-200 cursor-pointer" />
+          </Link>
+
+          <Link to="/favourite" className="relative block">
             <FiStar className="hover:text-sky-200 duration-200 cursor-pointer" />
             <span className="inline-flex items-center justify-center bg-redText text-whiteText absolute -top-1 -right-2 text-[9px] w-4 h-4 rounded-full">
               0
             </span>
-          </div>
-          <div className="relative block">
+          </Link>
+          <Link to="/cart" className="relative block">
             <FiShoppingBag className="hover:text-sky-200 duration-200 cursor-pointer" />
             <span className="inline-flex items-center justify-center bg-redText text-whiteText absolute -top-1 -right-2 text-[9px] w-4 h-4 rounded-full">
               0
             </span>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="w-full bg-darkText text-whiteText">
@@ -67,14 +70,15 @@ const Header = () => {
           <p className="inline-flex items-center gap-2 rounded-md border border-gray-400 hover:border-white py-1.5 px-3 text-sm/6 font-semibold text-gray-300 hover:text-white">
             select category <CgChevronDown />
           </p>
-          {bottomNavigation.map(({ title }) => (
-            <p
+          {bottomNavigation.map(({ title, link }) => (
+            <Link
+              to={link}
               className="uppercase hidden md:inline-flex text-sm font-semibold text-whiteText/90 hover:text-white duration-200 relative overflow-hidden group"
               key={title}
             >
               {title}
               <span className="inline-flex w-full h-[1px] bg-whiteText absolute bottom-0 left-0 transform  -translate-x-[105%] group-hover:translate-x-0 duration-300" />
-            </p>
+            </Link>
           ))}
         </Container>
       </div>
